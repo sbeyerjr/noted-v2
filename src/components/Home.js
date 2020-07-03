@@ -5,20 +5,23 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { GoDashboard } from 'react-icons/go';
+import { BsMusicNoteList } from 'react-icons/bs';
 
 export default function Home(props) {
   return (
     <div>
       <Header />
-      <Container
-        fluid
-        style={{ height: '300px', backgroundColor: '#2B2484', color: 'white' }}
-      >
+      <Container fluid style={{ backgroundColor: '#2B2484', color: 'white' }}>
         <Row>
           <Col sm={6} className='p-5'>
-            <h2>
-              Can't remember what you practiced yesterday? Noted can help!
-            </h2>
+            <div className='headline'>
+              <h2>
+                {
+                  "Can't remember what you practiced yesterday? \n Noted can help!"
+                }
+              </h2>
+            </div>
             <h5 className='mt-5'>
               Noted is for piano students who want to set consistent practice
               goals and keep track of what they have practiced.
@@ -27,39 +30,43 @@ export default function Home(props) {
               Get Started
             </Button>
           </Col>
-          <Col sm={6}>
-            <img src='img/piano.svg' style={{ maxWidth: '80%' }} />
+          <Col sm={6} className='piano'>
+            <img src='img/piano.svg' />
           </Col>
         </Row>
         <Row
           className='mt-5 pt-4 justify-content-md-center'
-          style={{ color: 'black' }}
+          style={{ color: 'black', backgroundColor: '#EEEEEE' }}
         >
           <Col md='auto'>
             <h4>What Can You Do with Noted?</h4>
           </Col>
         </Row>
         <Row
-          className='mt-2 justify-content-md-center'
-          style={{ color: 'black' }}
+          className='pt-2 justify-content-md-center'
+          style={{ color: 'black', backgroundColor: '#EEEEEE' }}
         >
           <Col md='auto'>
-            <h5>Personalized Dashboard</h5>
+            <div className='card text-center pt-3' style={{ width: '18rem' }}>
+              <GoDashboard style={{ fontSize: '53px' }} />
+              <div className='card-body'>
+                <p className='card-text'>Personalized Dashboard</p>
+              </div>
+            </div>
           </Col>
           <Col md='auto'>
-            <h5>Keep track of what you practiced.</h5>
+            <div className='card text-center pt-3' style={{ width: '18rem' }}>
+              <BsMusicNoteList style={{ fontSize: '53px' }} />
+              <div className='card-body'>
+                <p className='card-text'>
+                  Keep track of everything you practiced from yesterday, last
+                  week, last month, or even last year!
+                </p>
+              </div>
+            </div>
           </Col>
         </Row>
       </Container>
-      <div className='wave-container'>
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
-          <path
-            fill='#2b2484'
-            fill-opacity='1'
-            d='M0,128L80,160C160,192,320,256,480,266.7C640,277,800,235,960,208C1120,181,1280,171,1360,165.3L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z'
-          ></path>
-        </svg>
-      </div>
     </div>
   );
 }

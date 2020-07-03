@@ -1,16 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 .img-small {
   max-height: 50px;
 }
 .wave-container {
-  background: #ffffff;
+  background: #eeeeee;
 }
 .wave-container > svg {
+  display: block;
+}
+
+.headline {
+  white-space: pre-line;
+}
+
+.piano img {
+  width: 50%;
+  margin: auto;
+  display: block;
+}
+
+.card svg {
+  margin: auto;
   display: block;
 }
