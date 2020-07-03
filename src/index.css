@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.img-small {
+  max-height: 50px;
+}
+.wave-container {
+  background: #ffffff;
+}
+.wave-container > svg {
+  display: block;
+}
