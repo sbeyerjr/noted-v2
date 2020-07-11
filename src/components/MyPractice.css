@@ -124,3 +124,9 @@ li {
     width: 100%;
   }
 }
+
+.welcome {
+  background-color: #a29bfe;
+  border-radius: 5px;
+  color: #673bb7;
+}

@@ -2,13 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/Auth';
 import { clearAuthToken } from '../local-storage';
-import { Link } from 'react-router-dom';
 import { fetchProtectedData } from '../actions/ProtectedData';
 import './Header.css';
-import LoginForm from './LoginForm';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 
 export class HeaderBar extends React.Component {
@@ -46,7 +43,6 @@ export class HeaderBar extends React.Component {
   render() {
     // Only render the log out button if we are logged in
     let logOutButton;
-    let usersFirstName;
     let myDashboard;
     let myPractices;
     let logInButton;
@@ -93,10 +89,14 @@ export class HeaderBar extends React.Component {
           collapseOnSelect
           expand='lg'
           variant='dark'
-          style={{ backgroundColor: '#2B2484' }}
+          style={{ backgroundColor: '#673AB7' }}
         >
           <Navbar.Brand href='/'>
-            <img src='img/notedwhitelogo.png' className='img-small' />
+            <img
+              src='img/notedwhitelogo.png'
+              className='img-small'
+              alt='logo'
+            />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>

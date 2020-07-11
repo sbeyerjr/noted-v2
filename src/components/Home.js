@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Header from './Header';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -12,7 +11,7 @@ export default function Home(props) {
   return (
     <div>
       <Header />
-      <Container fluid style={{ backgroundColor: '#2B2484', color: 'white' }}>
+      <Container fluid style={{ backgroundColor: '#673AB7', color: 'white' }}>
         <Row>
           <Col sm={6} className='p-5'>
             <div className='headline'>
@@ -31,7 +30,7 @@ export default function Home(props) {
             </Button>
           </Col>
           <Col sm={6} className='piano'>
-            <img src='img/piano.svg' />
+            <img src='img/piano.svg' alt='piano' />
           </Col>
         </Row>
         <Row
@@ -55,7 +54,7 @@ export default function Home(props) {
             </div>
           </Col>
           <Col md='auto'>
-            <div className='card text-center pt-3' style={{ width: '18rem' }}>
+            <div className='card text-left pt-3' style={{ width: '18rem' }}>
               <BsMusicNoteList style={{ fontSize: '53px' }} />
               <div className='card-body'>
                 <p className='card-text'>

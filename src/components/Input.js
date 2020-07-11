@@ -10,16 +10,24 @@ export default class Input extends React.Component {
   render() {
     let error;
     if (this.props.meta.touched && this.props.meta.error) {
-      error = <div className="form-error">{this.props.meta.error}</div>;
+      error = (
+        <div className='alert alert-danger' role='alert'>
+          {this.props.meta.error}
+        </div>
+      );
     }
 
     let warning;
     if (this.props.meta.touched && this.props.meta.warning) {
-      warning = <div className="form-warning">{this.props.meta.warning}</div>;
+      warning = (
+        <div className='alert alert-danger' role='alert'>
+          {this.props.meta.warning}
+        </div>
+      );
     }
 
     return (
-      <div className="form-input">
+      <div className='form-input'>
         <label htmlFor={this.props.input.name}>
           {this.props.label}
           {error}

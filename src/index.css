@@ -10,7 +10,7 @@ body {
   max-height: 50px;
 }
 .wave-container {
-  background: #eeeeee;
+  background: #ffffff;
 }
 .wave-container > svg {
   display: block;
@@ -27,6 +27,14 @@ body {
 }
 
 .card svg {
+  margin: auto;
+  display: block;
+}
+
+label {
+  margin-top: 10px;
+}
+.reg-card {
   margin: auto;
   display: block;
 }
