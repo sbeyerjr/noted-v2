@@ -30,7 +30,7 @@ export default function Home(props) {
             </Button>
           </Col>
           <Col sm={6} className='piano'>
-            <img src='img/piano.svg' alt='piano' />
+            <img src='img/piano.png' alt='piano' />
           </Col>
         </Row>
         <Row
@@ -42,14 +42,17 @@ export default function Home(props) {
           </Col>
         </Row>
         <Row
-          className='pt-2 justify-content-md-center'
+          className='pt-2 justify-content-md-center pb-3'
           style={{ color: 'black', backgroundColor: '#EEEEEE' }}
         >
           <Col md='auto'>
             <div className='card text-center pt-3' style={{ width: '18rem' }}>
               <GoDashboard style={{ fontSize: '53px' }} />
               <div className='card-body'>
-                <p className='card-text'>Personalized Dashboard</p>
+                <p className='card-text'>
+                  Each user receives their own, personalized dashboard to help
+                  them see exactly how much they practiced.{' '}
+                </p>
               </div>
             </div>
           </Col>
