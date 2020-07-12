@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import Spinner from 'react-bootstrap/Spinner';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Header from './Header';
+import { Ripple } from 'react-spinners-css';
 
 export default () => Component => {
   function RequiresLogin(props) {
@@ -15,10 +14,8 @@ export default () => Component => {
         <div>
           <Header />
           <Container>
-            <Row className='mt-3'>
-              <Spinner animation='grow' role='status' className='spinner'>
-                <span className='sr-only'>Loading...</span>
-              </Spinner>
+            <Row className='mt-3 justify-content-center align-middle'>
+              <Ripple />
             </Row>
           </Container>
         </div>

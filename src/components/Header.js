@@ -44,7 +44,6 @@ export class HeaderBar extends React.Component {
     // Only render the log out button if we are logged in
     let logOutButton;
     let myDashboard;
-    let myPractices;
     let logInButton;
     let signUpButton;
     if (this.props.loggedIn) {
@@ -52,11 +51,6 @@ export class HeaderBar extends React.Component {
       myDashboard = (
         <Nav.Link href='/dashboard' label='My Dashboard'>
           My Dashboard
-        </Nav.Link>
-      );
-      myPractices = (
-        <Nav.Link href='/practices' label='My Practices'>
-          My Practices
         </Nav.Link>
       );
     } else {
@@ -104,7 +98,6 @@ export class HeaderBar extends React.Component {
               {signUpButton}
               {logInButton}
               {myDashboard}
-              {myPractices}
               {logOutButton}
             </Nav>
           </Navbar.Collapse>

@@ -10,14 +10,19 @@ import Col from 'react-bootstrap/Col';
 import { fetchProtectedData } from '../actions/ProtectedData';
 import { connect } from 'react-redux';
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import PracticeForm from './PracticeForm';
 
 class Practices extends React.Component {
   // State will apply to the practices object which is set to loading by default
   state = {
     practices: [],
     isLoading: true,
-    errors: null
+    errors: null,
+    setShow: false
   };
+
   // Now we're going to make a request for data using axios
   getPractice() {
     axios
@@ -32,10 +37,30 @@ class Practices extends React.Component {
         this.setState({ practices: res.data });
       });
   }
+
   // Let's our app know we're ready to render the data
   componentDidMount() {
     this.getPractice();
     this.props.dispatch(fetchProtectedData());
+  }
+
+  handleClose = () => {
+    this.getPractice();
+    console.log('this worked');
+    this.setState({
+      setShow: false
+    });
+  };
+
+  handleOpen = () =>
+    this.setState({
+      setShow: true
+    });
+
+  componentDidUpdate() {
+    // Typical usage (don't forget to compare props):
+
+    this.getPractice();
   }
 
   // Putting that data to use
@@ -48,8 +73,19 @@ class Practices extends React.Component {
     } else {
       time = 'times';
     }
-    let title;
-    let tableIndex = 0;
+
+    const minutesTotal = this.state.practices.reduce(
+      (totalMinutes, minute) => totalMinutes + minute.timePracticed,
+      0
+    );
+
+    var num = minutesTotal;
+    var hours = num / 60;
+    var rhours = Math.floor(hours);
+    var minutes = (hours - rhours) * 60;
+    var rminutes = Math.round(minutes);
+
+    const totalTime = rhours + ' hours and ' + rminutes + ' minutes';
 
     return (
       <div>
@@ -61,13 +97,29 @@ class Practices extends React.Component {
               <p>
                 You have practiced {practiceAmount} {time} so far! Keep it up!
               </p>
+              <Button
+                onClick={this.handleOpen}
+                style={{ backgroundColor: '#181159' }}
+              >
+                Add a new practice
+              </Button>
             </Col>
             <Col sm={5} className='p-3 welcome'>
-              <h4>Great job!</h4>
+              <Row>
+                <Col>
+                  <h4>Practice makes perfect!</h4>
+                  <p>So far, you have practiced:</p>
+                </Col>
+                <Col className='text-center headline minutes p-3 mr-4 ml-4'>
+                  <span className='minutes-text'>
+                    <b>{totalTime}</b>
+                  </span>
+                </Col>
+              </Row>
             </Col>
           </Row>
-          <Row>
-            <Table responsive className='table-hover table-striped'>
+          <Row className='p-4'>
+            <Table responsive className='table-hover table-striped the-table'>
               <thead>
                 <tr>
                   <th>#</th>
@@ -90,6 +142,17 @@ class Practices extends React.Component {
               ))}
             </Table>
           </Row>
+          <Modal show={this.state.setShow} onHide={this.handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Enter a practice</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <PracticeForm
+                handleClose={this.handleClose}
+                getPractice={this.getPractice}
+              />
+            </Modal.Body>
+          </Modal>
         </Container>
       </div>
     );

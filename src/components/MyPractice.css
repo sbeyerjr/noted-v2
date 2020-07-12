@@ -130,3 +130,10 @@ li {
   border-radius: 5px;
   color: #673bb7;
 }
+
+.minutes {
+  background-color: #181159;
+  color: #ecf0f1;
+  border-radius: 5px;
+  font-size: 1.5em;
+}

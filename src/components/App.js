@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 import Home from './Home';
-import Dashboard from './Dashboard';
 import Practices from './MyPractices';
 import RegistrationPage from './RegistrationPage';
 import { refreshAuthToken } from '../actions/Auth';
@@ -43,9 +42,8 @@ export class App extends React.Component {
       <Fragment>
         <Route exact path='/' component={Home} />
         <Route exact path='/login' component={Login} />
-        <Route exact path='/dashboard' component={Dashboard} />
+        <Route exact path='/dashboard' component={Practices} />
         <Route exact path='/register' component={RegistrationPage} />
-        <Route exact path='/practices' component={Practices} />
       </Fragment>
     );
   }
