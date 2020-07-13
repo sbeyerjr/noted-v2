@@ -46,7 +46,7 @@ export default function Home(props) {
           style={{ color: 'black', backgroundColor: '#EEEEEE' }}
         >
           <Col md='auto'>
-            <div className='card text-center pt-3' style={{ width: '18rem' }}>
+            <div className='card text-left pt-3' style={{ width: '18rem' }}>
               <GoDashboard style={{ fontSize: '53px' }} />
               <div className='card-body'>
                 <p className='card-text'>
